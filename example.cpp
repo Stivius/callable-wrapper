@@ -1,9 +1,11 @@
+#include <iostream>
+
 #include "BindWrapper.hpp"
 
 class Example
 {
 public:
-    void mem_function(int a, int b) { }
+    void mem_function(int a, int b) { std::cout << a << " " << b << std::endl; }
 };
 
 void global_function(void (*function_pointer)(int, int))
@@ -13,7 +15,7 @@ void global_function(void (*function_pointer)(int, int))
 
 int main()
 {
-    using namespace std::placeholder;
+    using namespace std::placeholders;
     
     Example obj;
     auto result = std::bind(&Example::mem_function, &obj, _1, _2);
