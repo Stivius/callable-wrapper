@@ -29,7 +29,7 @@ public:
 
 int main()
 {
-    using namespace std::placeholder;
+    using namespace std::placeholders;
     
     Example obj;
     auto result = std::bind(&Example::mem_function, &obj, _1, _2);
